@@ -31,3 +31,45 @@ mvn clean install
 Run the application.
 
 java -jar target/liveasy-transport-api.jar
+
+
+
+To Test the Apis use POSTMAN 
+
+create Load :
+    method: post(/load)
+    payload:
+    {
+	    "loadingPoint": "delhi",
+	    "unloadingPoint": "jaipur",
+	    "productType": "chemicals",
+	    "truckType": "canter",
+	    "noOfTrucks": "1",
+	    "weight": "100",
+      "comment": "Test load",
+	    "shipperId" : "1001",
+	    "date" : "05-02-2024"
+    }
+
+Read Load:
+    method: get(/load?shipperId=1001)
+
+Update Load:
+    method: put(/load/{loadId})
+    payload:
+    {
+	    "loadingPoint": "Mumbai",
+	    "unloadingPoint": "Pune",
+	    "productType": "wood",
+	    "truckType": "canter",
+	    "noOfTrucks": "2",
+	    "weight": "150",
+      "comment": "updated test load",
+	    "shipperId" : "1001",
+	    "date" : "05-02-2024"
+     }
+
+Delete Load: 
+    method : delete(/load/{loadId})
+    
+
